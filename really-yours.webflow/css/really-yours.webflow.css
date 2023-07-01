@@ -1931,6 +1931,7 @@ figure {
 .top-image {
   width: 80%;
   max-width: 440px;
+  max-height: -webkit-fill-available;
   object-fit: contain;
   margin: auto;
   position: absolute;
