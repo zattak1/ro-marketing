@@ -5630,6 +5630,7 @@ figure {
 .slide-image {
   width: 100%;
   max-width: 200px;
+  max-height: 160px;
 }
 
 .feature-absolute-image {
@@ -5796,7 +5797,7 @@ figure {
 }
 
 .cta-image {
-  width: 100%;
+  width: 52%;
   max-width: 240px;
 }
 
