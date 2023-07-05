@@ -1547,6 +1547,55 @@ figure {
   right: auto;
 }
 
+.r-circle {
+  display: inline-block;
+  position: relative;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background-color: #404eed;
+  animation: circle-animation 1s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.letter-r {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: Eudoxussans, sans-serif;
+}
+
+.ally-yours {
+  display: inline-block;
+  margin-left: 2px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #404eed;
+  font-family: Eudoxussans, sans-serif;
+}
+
+@keyframes circle-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
 .logo-image {
   width: 100%;
   max-width: 96px;
@@ -1577,6 +1626,11 @@ figure {
 
 .logo-contain {
   margin-right: 16px;
+}
+
+.logo-contain-inner {
+  display: flex;
+  align-items: center;
 }
 
 .navlink {
