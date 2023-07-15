@@ -10142,3 +10142,12 @@ figure {
 .no-padding-top {
   padding-top: 0 !important;
 }
+
+.contact-form-submitted {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* align items vertically */
+  align-items: center; /* align items horizontally */
+  height: 100%; /* this will only work if its parent (.contact-form-section) has a defined height */
+  
+}
