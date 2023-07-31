@@ -2347,7 +2347,20 @@ figure {
 }
 
 .pricing-top-contain {
+  min-height: 250px;
   margin-bottom: 48px;
+}
+
+.pricing-top-contain ul {
+  padding-left: 0;
+}
+
+.pricing-top-contain li {
+  list-style-type: none;
+}
+
+.pricing-top-contain img {
+  padding-right:3px;
 }
 
 .plan-name {
@@ -2362,6 +2375,7 @@ figure {
   color: rgba(18, 23, 34, .75);
   font-size: 18px;
   line-height: 155%;
+  margin-bottom: 16px;
 }
 
 .pricing-text.white {
@@ -10150,4 +10164,11 @@ figure {
   align-items: center; /* align items horizontally */
   height: 100%; /* this will only work if its parent (.contact-form-section) has a defined height */
   
+}
+
+.empty-price {
+  height: 60px; /* adjust this value to match the height of your price */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
