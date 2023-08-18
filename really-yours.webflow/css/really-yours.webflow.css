@@ -2734,6 +2734,11 @@ figure {
   transition: all .2s;
 }
 
+.long-blue-fill-button.active {
+  color: #fff;
+  background-color: #404eed;
+}
+
 .long-blue-fill-button:hover {
   color: #fff;
   background-color: #404eed;
@@ -10171,4 +10176,36 @@ figure {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.ui-dialog {
+  z-index: 1000 !important; /* A high value to ensure it's on top */
+  background-color: #fff;
+}
+
+.dialog-container {
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: center;    /* center children horizontally */
+  justify-content: center;/* center children vertically */
+  height: 100%;           /* take full height of the container */
+  width: 100%;            /* take full width of the container */
+}
+
+.button-group {
+  display: flex;
+  gap: 10px; /* Adjust for space between buttons */
+  font-family: Eudoxussans, sans-serif;
+}
+
+.ui-dialog-titlebar-close {
+  display: none;
+}
+
+#benefits-community { 
+  display: none;
+}
+
+#features-community {
+  display: none;
 }
