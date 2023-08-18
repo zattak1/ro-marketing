@@ -29,9 +29,6 @@
 
             $("#benefits-community").css("display", "block");
             $("#features-community").css("display", "block");
-
-            $("#myDialog").dialog("close");
-
           }
 
           if (event.target.classList.contains('toggle-button')) {
@@ -47,8 +44,11 @@
               // Set the clicked button to active state
               event.target.classList.add('active');
           }
+
+          $("#myDialog").dialog("close");
+
         });
-      
+        
         var dialogOpened = false;
     
         $(window).scroll(function() {
