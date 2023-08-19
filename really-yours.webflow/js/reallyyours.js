@@ -48,8 +48,7 @@
           $("#myDialog").dialog("close");
           $('html, body').animate({
             scrollTop: $('#benefits').offset().top
-        }, 1000);  // 1000 is the duration in milliseconds
-        
+          }, 1000);  // 1000 is the duration in milliseconds
 
         });
         
