@@ -16,7 +16,7 @@
             $('body').css('overflow', 'hidden'); // Prevents scroll on the body
           },
           close: function(event, ui) {
-              $('body').css('overflow', 'auto'); // Re-enables scroll on the body
+            $('body').css('overflow', 'auto'); // Re-enables scroll on the body
           }
         });
 
@@ -44,18 +44,18 @@
               // Set the clicked button to active state
               event.target.classList.add('active');
           }
-
+          $("#main-content-container").css("display", "block");
           $("#myDialog").dialog("close");
           $('html, body').animate({
             scrollTop: $('#benefits').offset().top
           }, 1000);  // 1000 is the duration in milliseconds
-
+      
         });
         
         var dialogOpened = false;
     
         $(window).scroll(function() {
-            var targetOffset = $("#benefits").offset().top;
+            var targetOffset = $("#dialog-trigger").offset().top;
             var windowHeight = $(window).height();
             var scrollPosition = $(this).scrollTop();
     
