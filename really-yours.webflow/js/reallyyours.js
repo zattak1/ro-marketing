@@ -68,7 +68,8 @@
               // Set the clicked button to active state
               event.target.classList.add('active');
           }
-
+          
+          $("#main-content-container").css("display", "block");
           $("#myDialog").dialog("close");
           $('html, body').animate({
             scrollTop: $('#benefits').offset().top
