@@ -10192,10 +10192,6 @@ figure {
   width: 100%;            /* take full width of the container */
 }
 
-#main-content-container {
-  display: none;
-}
-
 .button-group {
   display: flex;
   gap: 10px; /* Adjust for space between buttons */

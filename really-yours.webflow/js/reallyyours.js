@@ -3,7 +3,7 @@
 
         var dialogOpened = false;
         const targetElement = document.querySelector('#myDialog');
-
+        
         $(window).scroll(function() {
             var targetOffset = $("#dialog-trigger").offset().top;
             var windowHeight = $(window).height();
@@ -13,6 +13,11 @@
               $("#myDialog").dialog("open");
               dialogOpened = true; // Prevent dialog from opening multiple times
             }
+        });
+
+        $(window).on("resize", function() {
+          $("#myDialog").dialog("option", "width", $(window).width());
+          $("#myDialog").dialog("option", "height", $(window).height());
         });
 
         $("#myDialog").dialog({
@@ -63,7 +68,7 @@
               // Set the clicked button to active state
               event.target.classList.add('active');
           }
-          $("#main-content-container").css("display", "block");
+
           $("#myDialog").dialog("close");
           $('html, body').animate({
             scrollTop: $('#benefits').offset().top
