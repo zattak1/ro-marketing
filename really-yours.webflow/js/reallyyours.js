@@ -1,5 +1,20 @@
 (() => {
     $(function() {
+
+        var dialogOpened = false;
+        const targetElement = document.querySelector('#myDialog');
+
+        $(window).scroll(function() {
+            var targetOffset = $("#dialog-trigger").offset().top;
+            var windowHeight = $(window).height();
+            var scrollPosition = $(this).scrollTop();
+    
+            if (!dialogOpened && scrollPosition + windowHeight > targetOffset) {
+              $("#myDialog").dialog("open");
+              dialogOpened = true; // Prevent dialog from opening multiple times
+            }
+        });
+
         $("#myDialog").dialog({
           autoOpen: false,
           show: {
@@ -13,10 +28,14 @@
           width: $(window).width(),
           height: $(window).height(),
           open: function(event, ui) {
-            $('body').css('overflow', 'hidden'); // Prevents scroll on the body
+            bodyScrollLock.disableBodyScroll(targetElement);
+
+            //$('body').css('overflow', 'hidden'); // Prevents scroll on the body
           },
           close: function(event, ui) {
-            $('body').css('overflow', 'auto'); // Re-enables scroll on the body
+            bodyScrollLock.enableBodyScroll(targetElement);
+
+            //$('body').css('overflow', 'auto'); // Re-enables scroll on the body
           }
         });
 
@@ -52,18 +71,7 @@
       
         });
         
-        var dialogOpened = false;
-    
-        $(window).scroll(function() {
-            var targetOffset = $("#dialog-trigger").offset().top;
-            var windowHeight = $(window).height();
-            var scrollPosition = $(this).scrollTop();
-    
-            if (!dialogOpened && scrollPosition + windowHeight > targetOffset) {
-              $("#myDialog").dialog("open");
-              dialogOpened = true; // Prevent dialog from opening multiple times
-            }
-        });
+
     });
 })();
   
