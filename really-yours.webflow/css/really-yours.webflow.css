@@ -10193,6 +10193,12 @@ figure {
   width: 100%;            /* take full width of the container */
 }
 
+@media (max-width: 768px) {
+  #main-content-select {
+    margin-top: 0;
+  }
+} 
+
 #main-content-container {
   display: none;
 }

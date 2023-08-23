@@ -1,49 +1,6 @@
 (() => {
     $(function() {
 
-        var dialogOpened = false;
-        const targetElement = document.querySelector('#myDialog');
-        
-        $(window).scroll(function() {
-            var targetOffset = $("#dialog-trigger").offset().top;
-            var windowHeight = $(window).height();
-            var scrollPosition = $(this).scrollTop();
-    
-            if (!dialogOpened && scrollPosition + windowHeight > targetOffset) {
-              $("#myDialog").dialog("open");
-              dialogOpened = true; // Prevent dialog from opening multiple times
-            }
-        });
-
-        $(window).on("resize", function() {
-          $("#myDialog").dialog("option", "width", $(window).width());
-          $("#myDialog").dialog("option", "height", $(window).height());
-        });
-
-        $("#myDialog").dialog({
-          autoOpen: false,
-          show: {
-            effect: "fade",
-            duration: 500
-          },
-          hide: {
-            effect: "explode",
-            duration: 500
-          },
-          width: $(window).width(),
-          height: $(window).height(),
-          open: function(event, ui) {
-            bodyScrollLock.disableBodyScroll(targetElement);
-
-            //$('body').css('overflow', 'hidden'); // Prevents scroll on the body
-          },
-          close: function(event, ui) {
-            bodyScrollLock.enableBodyScroll(targetElement);
-
-            //$('body').css('overflow', 'auto'); // Re-enables scroll on the body
-          }
-        });
-
         document.getElementById('toggleButtonGroup').addEventListener('click', function(event) {
           
           // Ensure that one of the buttons was clicked
@@ -69,8 +26,7 @@
               event.target.classList.add('active');
           }
           $("#main-content-select").css("display", "none");
-          $("#main-content-container").fadeIn(1000);
-          $("#myDialog").dialog("close");
+          $("#main-content-container").fadeIn(1000);  
           $('html, body').animate({
             scrollTop: $('#benefits').offset().top
           }, 1000);  // 1000 is the duration in milliseconds
