@@ -10183,7 +10183,8 @@ figure {
   background-color: #fff;
 }
 
-.dialog-container {
+#main-content-select {
+  margin-top: 66px;
   display: flex;
   flex-direction: column; /* stack children vertically */
   align-items: center;    /* center children horizontally */
