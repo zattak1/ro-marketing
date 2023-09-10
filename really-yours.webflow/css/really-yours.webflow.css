@@ -1865,7 +1865,6 @@ figure {
 .slide-image-contain {
   width: 100%;
   max-width: 200px;
-  background-color: #f2f4f7;
   border-radius: 100px;
   margin-bottom: 40px;
   margin-left: auto;
@@ -10185,6 +10184,7 @@ figure {
 
 #main-content-select {
   margin-top: 66px;
+  margin-bottom: 66px;
   display: flex;
   flex-direction: column; /* stack children vertically */
   align-items: center;    /* center children horizontally */
@@ -10196,8 +10196,15 @@ figure {
 @media (max-width: 768px) {
   #main-content-select {
     margin-top: 0;
+    margin-bottom: 33px;
   }
 } 
+
+@media screen and (max-width: 991px) {
+  #main-content-select .long-blue-fill-button {
+    margin-top: 0;
+  }
+}
 
 #main-content-container {
   display: none;
