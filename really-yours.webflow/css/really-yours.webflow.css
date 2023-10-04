@@ -10220,10 +10220,6 @@ figure {
   display: none;
 }
 
-#benefits-community { 
-  display: none;
-}
-
-#features-community {
+#benefits-community, #features-community, #pricing-community { 
   display: none;
 }

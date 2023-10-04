@@ -7,9 +7,12 @@
           if (event.target.id == "community") {
             $("#benefits-creator").css("display", "none");
             $("#features-creator").css("display", "none");
+            $("#pricing-creator").css("display", "none");
 
             $("#benefits-community").css("display", "block");
             $("#features-community").css("display", "block");
+            $("#pricing-community").css("display", "block");
+
           }
 
           if (event.target.classList.contains('toggle-button')) {
