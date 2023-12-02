@@ -1,6 +1,9 @@
 (() => {
     $(function() {
 
+        //content selector buttons
+        var contentSelected = false; // Set this to true or false based on your condition
+
         document.getElementById('toggleButtonGroup').addEventListener('click', function(event) {
           
           // Ensure that one of the buttons was clicked
@@ -28,6 +31,7 @@
               // Set the clicked button to active state
               event.target.classList.add('active');
           }
+          contentSelected = true;
           $("#main-content-select").css("display", "none");
           $("#main-content-container").fadeIn(1000);  
           $('html, body').animate({
@@ -35,8 +39,21 @@
           }, 1000);  // 1000 is the duration in milliseconds
       
         });
-        
-
+      
+        //scroll user to main selector buttons if they click the nav menu before selecting who they are
+        $('a.navlink, a.blue-fill-button').click(function(e){
+            if (!contentSelected) {
+                e.preventDefault(); // Prevent default anchor behavior
+                var target = $("#main-content-select");
+    
+                if(target.length){
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000); // Duration of scroll
+                }
+            }
+            // If contentSelected is true, normal anchor behavior will occur
+        });
     });
 })();
   
