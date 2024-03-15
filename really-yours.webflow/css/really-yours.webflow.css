@@ -10206,10 +10206,6 @@ figure {
   }
 }
 
-#main-content-container {
-  display: none;
-}
-
 .button-group {
   display: flex;
   gap: 10px; /* Adjust for space between buttons */
@@ -10220,6 +10216,4 @@ figure {
   display: none;
 }
 
-#benefits-community, #features-community, #pricing-community { 
-  display: none;
-}
+
