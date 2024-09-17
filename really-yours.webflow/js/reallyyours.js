@@ -1,6 +1,14 @@
 (() => {
     $(function() {
 
+        const gifs = document.querySelectorAll('.gif');
+        gifs.forEach(gif => {
+            gif.addEventListener('load', function() {
+            this.style.display = 'block';
+            this.previousElementSibling.style.display = 'none';
+            });
+        });
+
         //content selector buttons
         var contentSelected = false; // Set this to true or false based on your condition
 
