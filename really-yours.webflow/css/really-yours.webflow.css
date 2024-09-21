@@ -2425,10 +2425,12 @@ figure {
   background-color: #121722;
 }
 
+.price-maintext {
+  margin-bottom: 21px;
+}
 .price-subtext {
   color: rgba(18, 23, 34, .5);
   text-align: center;
-  margin-top: 10px;
   font-size: 14px;
   font-weight: 500;
   line-height: 145%;
