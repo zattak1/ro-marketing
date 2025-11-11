@@ -2303,6 +2303,12 @@ figure {
   max-width: 580px;
 }
 
+.pricing-footer {
+  grid-column: 1 / 3;
+  font-size: 14px;
+}
+
+
 .pricing-paragraph {
   max-width: 410px;
   color: rgba(18, 23, 34, .75);
