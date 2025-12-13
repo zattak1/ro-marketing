@@ -10242,7 +10242,7 @@ figure {
 }
 
 .manifesto-text.collapsed {
-  max-height: 6em; /* Show approximately 3-4 lines */
+  max-height: 12em; /* Show approximately 6-8 lines */
   overflow: hidden;
   position: relative;
 }
