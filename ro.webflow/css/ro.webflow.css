@@ -2268,13 +2268,10 @@ figure {
   position: relative;
 }
 
-.pricing-section .h3-heading {
+.pricing-section.h3-heading {
   max-width: none;
 }
 
-.pricing-section .top-center-wrapper {
-  max-width: none;
-}
 .pricing-wrapper {
   width: 90%;
   max-width: 1280px;
@@ -2441,14 +2438,6 @@ figure {
 .price-maintext {
   margin-bottom: 5px;
 }
-
-.price-maintext-small {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 145%;
-}
-
 .price-subtext {
   color: rgba(18, 23, 34, .5);
   text-align: center;
@@ -10243,4 +10232,60 @@ figure {
   display: none;
 }
 
+/* Collapsible Manifesto Styles */
+.manifesto-container {
+  position: relative;
+}
 
+.manifesto-container .slider-paragraph {
+  color: #fff;
+}
+
+.manifesto-text.collapsed {
+  max-height: 6em; /* Show approximately 3-4 lines */
+  overflow: hidden;
+  position: relative;
+}
+
+.manifesto-text.collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  background: linear-gradient(to bottom, transparent, #404eed);
+  pointer-events: none;
+}
+
+.manifesto-text.expanded {
+  max-height: none;
+}
+
+.manifesto-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5em 0;
+  font-size: 18px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.5em;
+  transition: opacity 0.2s;
+}
+
+.manifesto-toggle:hover {
+  opacity: 0.8;
+}
+
+.toggle-icon {
+  transition: transform 0.3s;
+  font-size: 0.8em;
+}
+
+.manifesto-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}

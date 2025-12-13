@@ -1,66 +1,21 @@
 (() => {
     $(function() {
-
-        const gifs = document.querySelectorAll('.gif');
-        gifs.forEach(gif => {
-            gif.addEventListener('load', function() {
-            this.style.display = 'block';
-            this.previousElementSibling.style.display = 'none';
-            });
-        });
-
-        //content selector buttons
-        var contentSelected = false; // Set this to true or false based on your condition
-
-        document.getElementById('toggleButtonGroup').addEventListener('click', function(event) {
-          
-          // Ensure that one of the buttons was clicked
-          if (event.target.id == "community") {
-            $("#benefits-creator").css("display", "none");
-            $("#features-creator").css("display", "none");
-            $("#pricing-creator").css("display", "none");
-
-            $("#benefits-community").css("display", "block");
-            $("#features-community").css("display", "block");
-            $("#pricing-community").css("display", "block");
-
-          }
-
-          if (event.target.classList.contains('toggle-button')) {
-              
-              // Get all buttons
-              var buttons = document.querySelectorAll('.toggle-button');
-              
-              // Reset all buttons to inactive state
-              buttons.forEach(function(button) {
-                  button.classList.remove('active');
-              });
-      
-              // Set the clicked button to active state
-              event.target.classList.add('active');
-          }
-          contentSelected = true;
-          $("#main-content-select").css("display", "none");
-          $("#main-content-container").fadeIn(1000);  
-          $('html, body').animate({
-            scrollTop: $('#benefits').offset().top
-          }, 1000);  // 1000 is the duration in milliseconds
-      
-        });
-      
-        //scroll user to main selector buttons if they click the nav menu before selecting who they are
-        $('a.navlink, a.blue-fill-button').click(function(e){
-            if (!contentSelected) {
-                e.preventDefault(); // Prevent default anchor behavior
-                var target = $("#main-content-select");
-    
-                if(target.length){
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000); // Duration of scroll
-                }
+        // Collapsible manifesto functionality
+        $(document).on('click', '.manifesto-toggle', function() {
+            console.log('manifesto-toggle clicked');
+            const $text = $('.manifesto-text');
+            const $button = $(this);
+            const isExpanded = $button.attr('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                $text.removeClass('expanded').addClass('collapsed');
+                $button.attr('aria-expanded', 'false');
+                $button.find('.toggle-text').text('Read more');
+            } else {
+                $text.removeClass('collapsed').addClass('expanded');
+                $button.attr('aria-expanded', 'true');
+                $button.find('.toggle-text').text('Read less');
             }
-            // If contentSelected is true, normal anchor behavior will occur
         });
     });
 })();
