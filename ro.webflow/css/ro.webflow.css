@@ -2450,6 +2450,15 @@ figure {
   color: rgba(255, 255, 255, .75);
 }
 
+.price-maintext-small {
+  color: rgba(18, 23, 34, .5);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 145%;
+  margin-top: 8px;
+}
+
 .month-span {
   font-size: 32px;
   line-height: 40px;
