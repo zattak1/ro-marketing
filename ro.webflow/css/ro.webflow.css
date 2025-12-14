@@ -10246,6 +10246,11 @@ figure {
   position: relative;
 }
 
+.manifesto-container a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .manifesto-container .slider-paragraph {
   color: #fff;
 }
