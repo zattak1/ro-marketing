@@ -5893,6 +5893,7 @@ figure {
   bottom: auto;
   left: auto;
   right: -6%;
+  overflow: hidden;
 }
 
 .hero-image-1 {
@@ -10302,4 +10303,12 @@ figure {
 
 .manifesto-toggle[aria-expanded="true"] .toggle-icon {
   transform: rotate(180deg);
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
 }

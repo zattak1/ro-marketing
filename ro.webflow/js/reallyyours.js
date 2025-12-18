@@ -22,6 +22,16 @@
                 $button.find('.toggle-text').text('Read less');
             }
         });
+
+        // Hero video delay - start video after 2 seconds
+        const heroVideo = document.querySelector('.hero-video');
+        if (heroVideo) {
+            setTimeout(function() {
+                heroVideo.play().catch(function(error) {
+                    console.log('Video autoplay prevented:', error);
+                });
+            }, 1500);
+        }
     });
 })();
   
