@@ -10325,3 +10325,7 @@ figure {
 .show {
   display: block !important;
 }
+
+.margin-top-60 {
+  margin-top: 60px;
+}
