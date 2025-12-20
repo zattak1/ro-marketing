@@ -5900,6 +5900,7 @@ figure {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: url('../images/crossfade-placeholder.webp') center/cover no-repeat;
 }
 
 .hero-image-1 {
