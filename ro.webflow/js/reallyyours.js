@@ -30,7 +30,7 @@
                 heroVideo.play().catch(function(error) {
                     console.log('Video autoplay prevented:', error);
                 });
-            }, 2000);
+            }, 1000);
         }
     });
 })();
