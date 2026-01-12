@@ -10333,3 +10333,41 @@ figure {
 .margin-top-60 {
   margin-top: 60px;
 }
+
+/* Full-width image break section */
+.full-width-image-break {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.full-width-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 70vh;
+}
+
+@media screen and (max-width: 991px) {
+  .full-width-image {
+    max-height: 50vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .full-width-image {
+    max-height: 40vh;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .full-width-image {
+    max-height: 30vh;
+  }
+}
