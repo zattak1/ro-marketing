@@ -10356,18 +10356,19 @@ figure {
 
 @media screen and (max-width: 991px) {
   .full-width-image {
-    max-height: 50vh;
+    height: 50vh;
+    object-fit: fill;
   }
 }
 
 @media screen and (max-width: 767px) {
   .full-width-image {
-    max-height: 40vh;
+    height: 40vh;
   }
 }
 
 @media screen and (max-width: 479px) {
   .full-width-image {
-    max-height: 30vh;
+    height: 30vh;
   }
 }
