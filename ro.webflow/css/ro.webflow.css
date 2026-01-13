@@ -10342,7 +10342,8 @@ figure {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-bottom: 0;
+  margin-top: 60px;
+  margin-bottom: 60px;
   overflow: hidden;
 }
 
@@ -10359,16 +10360,31 @@ figure {
     height: 50vh;
     object-fit: fill;
   }
+  
+  .full-width-image-break {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .full-width-image {
     height: 40vh;
   }
+  
+  .full-width-image-break {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 }
 
 @media screen and (max-width: 479px) {
   .full-width-image {
     height: 30vh;
+  }
+  
+  .full-width-image-break {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
