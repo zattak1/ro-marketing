@@ -23,14 +23,31 @@
             }
         });
 
-        // Hero video delay - start video after 2 seconds
+        // Hero video - start on scroll or after 2 seconds, whichever comes first
         const heroVideo = document.querySelector('.hero-video');
         if (heroVideo) {
-            setTimeout(function() {
+            let videoStarted = false;
+            
+            const startVideo = function() {
+                if (videoStarted) return;
+                videoStarted = true;
                 heroVideo.play().catch(function(error) {
                     console.log('Video autoplay prevented:', error);
                 });
-            }, 1000);
+                // Clean up listeners
+                window.removeEventListener('scroll', onScroll);
+                clearTimeout(timeoutId);
+            };
+            
+            const onScroll = function() {
+                startVideo();
+            };
+            
+            // Start on scroll
+            window.addEventListener('scroll', onScroll, { once: true });
+            
+            // Or start after 2 seconds
+            const timeoutId = setTimeout(startVideo, 3000);
         }
     });
 })();
