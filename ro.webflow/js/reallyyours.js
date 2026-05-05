@@ -23,11 +23,11 @@
             }
         });
 
-        // Hero video - start on scroll or after 2 seconds, whichever comes first
+        // Hero video - start on scroll or after 1 second, whichever comes first
         const heroVideo = document.querySelector('.hero-video');
         if (heroVideo) {
             let videoStarted = false;
-            
+
             const startVideo = function() {
                 if (videoStarted) return;
                 videoStarted = true;
@@ -38,16 +38,16 @@
                 window.removeEventListener('scroll', onScroll);
                 clearTimeout(timeoutId);
             };
-            
+
             const onScroll = function() {
                 startVideo();
             };
-            
+
             // Start on scroll
             window.addEventListener('scroll', onScroll, { once: true });
-            
-            // Or start after 2 seconds
-            const timeoutId = setTimeout(startVideo, 3000);
+
+            // Or start after 1 second
+            const timeoutId = setTimeout(startVideo, 1000);
         }
     });
 })();
