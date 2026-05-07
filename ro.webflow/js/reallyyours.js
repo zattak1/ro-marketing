@@ -49,6 +49,22 @@
             // Or start after 1 second
             const timeoutId = setTimeout(startVideo, 1000);
         }
+
+        // Open source learn-more modal
+        const modal = document.getElementById('openSourceModal');
+        const openBtn = document.getElementById('openSourceLearnMore');
+        if (modal && openBtn && typeof modal.showModal === 'function') {
+            openBtn.addEventListener('click', function() {
+                modal.showModal();
+            });
+            modal.querySelector('.open-source-modal-close').addEventListener('click', function() {
+                modal.close();
+            });
+            // Close when clicking the backdrop
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) modal.close();
+            });
+        }
     });
 })();
   
