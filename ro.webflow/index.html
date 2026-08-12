@@ -165,6 +165,20 @@
       white-space: nowrap;
     }
 
+    /* "Architecture of Freedom" cards (#122). This was a Webflow slider whose
+       mask (max-width 400px, overflow visible) spilled every slide into a
+       clipped horizontal row with non-functional arrows. Only three cards are
+       live (the other seven have been commented out since the first export),
+       so it is now a plain responsive grid and the slider chrome is gone. */
+    .freedom-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    .freedom-cell { display: flex; }
+    .freedom-cell .slide-wrapper { max-width: none; width: 100%; }
+
     @media (max-width: 600px) {
       .coming-soon-tag { margin-left: 8px; padding: 4px 10px; font-size: 11px; }
       .open-source-banner { padding: 36px 20px; }
@@ -373,9 +387,8 @@
           <h6 class="overline-text light-blue margin-top-60">How it works</h6>
           <h3 class="slider-heading ">The Architecture of Freedom</h3>
           <div class="slider-contain">
-            <div data-delay="4000" data-animation="slide" class="slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="false">
-              <div id="creator-benefits" class="mask w-slider-mask">
-                <div class="slide w-slide">
+            <div id="creator-benefits" class="freedom-grid">
+                <div class="freedom-cell">
                   <div class="slide-wrapper">
                     <div class="slide-image-contain">
                       <img src="images/community-dinner.webp" alt="Community">
@@ -384,10 +397,10 @@
                     <p class="slider-paragraph">Social media is for audiences; this is for people. Replace engagement traps with healthy tools designed for real connection. Organize events, host classes, and spark deep conversations in a space that actually feels safe and seen.<br><br></p>
                   </div>
                 </div>
-                <div class="slide w-slide">
+                <div class="freedom-cell">
                   <div class="slide-wrapper">
                     <div class="slide-image-contain">
-                      <img src="images/solo-creator.webp" alt="Creation">                
+                      <img src="images/solo-creator.webp" alt="Creation">
                     </div>
                     <h5 class="slider-text">Creation.</h5>
                     <p class="slider-paragraph">
@@ -395,7 +408,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="slide w-slide">
+                <div class="freedom-cell">
                   <div class="slide-wrapper">
                     <div class="slide-image-contain">
                       <img src="images/community-exchange.webp" alt="Commons">
@@ -496,10 +509,6 @@
                     </a>
                   </div>
                 </div>-->
-              </div>
-              <div class="left-arrow w-slider-arrow-left"><img src="images/arrow-right-1.5-1_1.svg" loading="lazy" alt="" class="contain"></div>
-              <div class="right-arrow w-slider-arrow-right"><img src="images/arrow-right-1.5-1.svg" loading="lazy" alt="" class="contain"></div>
-              <div class="slide-nav w-slider-nav w-round"></div>
             </div>
           </div>
         </div>
