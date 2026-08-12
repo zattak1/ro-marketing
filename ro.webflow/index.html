@@ -140,7 +140,33 @@
     }
     .open-source-modal-footer a:hover { text-decoration: underline; }
 
+    /* Coming-soon markers. Beta scope cut (#98): the feature machinery exists
+       but is not sellable yet, so the sections stay and the promise is deferred.
+       Reverting a scope cut means removing the matching marker here. */
+    .coming-soon-tag {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 12px;
+      padding: 5px 12px;
+      border: 1px solid #c7cffb;
+      border-radius: 999px;
+      background: #f0f4ff;
+      color: #404eed;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .coming-soon-inline {
+      color: rgba(18, 23, 34, .6);
+      font-style: italic;
+      white-space: nowrap;
+    }
+
     @media (max-width: 600px) {
+      .coming-soon-tag { margin-left: 8px; padding: 4px 10px; font-size: 11px; }
       .open-source-banner { padding: 36px 20px; }
       .open-source-banner-text { font-size: 18px; }
       .open-source-modal-content { padding: 32px 20px 20px; }
@@ -571,7 +597,7 @@
           </div>
           <div class="features-text-contain">
             <h6 class="overline-text bottom-margin-12px">Meet in the Moment</h6>
-            <h3 class="h3-heading">Live Streaming.</h3>
+            <h3 class="h3-heading">Live Streaming. <span class="coming-soon-tag">Coming soon</span></h3>
             <p class="paragraph-18px">Whether you’re sharing knowledge, showcasing talent, or hosting a conversation, live streaming brings your community together in a way that’s immediate, immersive, and real.</p>
             <div class="points-contain">
               <div class="point-wrapper"><img src="images/tick-circle.3-1.svg" loading="lazy" alt="" class="checkmark">
@@ -594,7 +620,7 @@
           </div>
           <div class="features-text-contain">
             <h6 class="overline-text bottom-margin-12px">p2p means really free</h6>
-            <h3 class="h3-heading">Video Chat.</h3>
+            <h3 class="h3-heading">Video Chat. <span class="coming-soon-tag">Coming soon</span></h3>
             <p class="paragraph-18px">Move from text to presence in one click. Peer-to-peer video creates real moments—private, fast, and owned by you.
             </p>
             <div class="points-contain">
@@ -728,10 +754,10 @@
                   <li><img src="images/tick-circle.3-1.svg" />Up to 10,000 active users per month.</li>
                   <li><img src="images/tick-circle.3-1.svg" />Add 1,000 more users for $50/mo.</li>
                   <li><img src="images/tick-circle.3-1.svg" />Priority support — 24-hour response.</li>
-                  <li><img src="images/tick-circle.3-1.svg" />Webhooks &amp; API for custom integrations.</li>
-                  <li><img src="images/tick-circle.3-1.svg" />Bring-your-own email (SMTP) and calendar (iCal/CalDAV) — no Big Tech dependencies.</li>
-                  <li><img src="images/tick-circle.3-1.svg" />Advanced analytics &amp; reporting.</li>
-                  <li><img src="images/tick-circle.3-1.svg" />White-label email &amp; notifications.</li>
+                  <li><img src="images/tick-circle.3-1.svg" />Webhooks &amp; API for custom integrations. <span class="coming-soon-inline">(coming soon)</span></li>
+                  <li><img src="images/tick-circle.3-1.svg" />Bring-your-own email (SMTP) and calendar (iCal/CalDAV) — no Big Tech dependencies. <span class="coming-soon-inline">(coming soon)</span></li>
+                  <li><img src="images/tick-circle.3-1.svg" />Advanced analytics &amp; reporting. <span class="coming-soon-inline">(coming soon)</span></li>
+                  <li><img src="images/tick-circle.3-1.svg" />White-label email &amp; notifications. <span class="coming-soon-inline">(coming soon)</span></li>
                   <li><img src="images/tick-circle.3-1.svg" />Free consultations for advanced customization.</li>
                 </ul>
               </div>
@@ -758,7 +784,7 @@
                   <li><img src="images/tick-circle.3-1.svg" />Community support via GitHub.</li>
                 </ul>
               </div>
-              <a href="https://github.com/Qbix/Platform" target="_blank" rel="noopener noreferrer" class="pricing-button w-button">Self-host instructions →</a>
+              <a href="https://qbix.com/platform/guide/installing" target="_blank" rel="noopener noreferrer" class="pricing-button w-button">Self-host instructions →</a>
             </div>
             <div class="pricing-footer">
               <sup>*</sup>One-time setup fee: covers custom branding, configuration (platform, server and DNS), and launch support — everything needed to get your platform live, stable, and fully aligned with your brand.
