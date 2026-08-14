@@ -179,6 +179,15 @@
     .freedom-cell { display: flex; }
     .freedom-cell .slide-wrapper { max-width: none; width: 100%; }
 
+    /* At <=767px .slider-contain zeroes its 80px margin-top because the old
+       Webflow .slider brought its own 120px. The grid that replaced the slider
+       has none, so the heading sat flush against the first card on phones
+       (iPhone 13 mini). Restore the gap on the grid itself, leaving the
+       testimonial slider's spacing alone. */
+    @media screen and (max-width: 767px) {
+      .freedom-grid { margin-top: 40px; }
+    }
+
     @media (max-width: 600px) {
       .coming-soon-tag { margin-left: 8px; padding: 4px 10px; font-size: 11px; }
       .open-source-banner { padding: 36px 20px; }
