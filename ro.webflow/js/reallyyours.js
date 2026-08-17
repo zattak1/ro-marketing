@@ -48,17 +48,6 @@
 
             // Or start after 1 second
             const timeoutId = setTimeout(startVideo, 1000);
-
-            // Loop manually with a 2-second pause between plays
-            // (the native `loop` attribute restarts with no gap)
-            heroVideo.addEventListener('ended', function() {
-                setTimeout(function() {
-                    heroVideo.currentTime = 0;
-                    heroVideo.play().catch(function(error) {
-                        console.log('Video replay prevented:', error);
-                    });
-                }, 2000);
-            });
         }
 
         // Open source learn-more modal
