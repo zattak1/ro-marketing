@@ -10166,38 +10166,38 @@ figure {
 
 @font-face {
   font-family: 'Eudoxussans';
-  src: url('../fonts/EudoxusSans-ExtraBold.ttf') format('truetype');
+  src: url('../fonts/EudoxusSans-ExtraBold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Eudoxussans';
-  src: url('../fonts/EudoxusSans-ExtraLight.ttf') format('truetype');
+  src: url('../fonts/EudoxusSans-ExtraLight.woff2') format('woff2');
   font-weight: 200;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Eudoxussans';
-  src: url('../fonts/EudoxusSans-Light.ttf') format('truetype');
+  src: url('../fonts/EudoxusSans-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Eudoxussans';
-  src: url('../fonts/EudoxusSans-Medium.ttf') format('truetype');
+  src: url('../fonts/EudoxusSans-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Eudoxussans';
-  src: url('../fonts/EudoxusSans-Regular.ttf') format('truetype');
+  src: url('../fonts/EudoxusSans-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 .no-padding-top {
