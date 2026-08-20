@@ -10455,3 +10455,74 @@ h3.slider-text {
     gap: 4px;
   }
 }
+
+/* == ro#258: stills sliders replacing the five feature GIFs == */
+/* Occupies the same slot as the old .top-image GIF layer: centered over the
+   .background-image backdrop. aspect-ratio matches the 330x492 capture frame;
+   if the section is shorter, max-height clips the box and the slides
+   cover-crop from the top instead of distorting. */
+.still-slider {
+  width: 80%;
+  max-width: 440px;
+  aspect-ratio: 330 / 492;
+  max-height: 100%;
+  margin: auto;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 64px rgba(18, 23, 34, .18);
+}
+.still-slider-track {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.still-slider-track::-webkit-scrollbar {
+  display: none;
+}
+.still-slider-track img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.still-slider-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.still-slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: rgba(18, 23, 34, .25);
+  cursor: pointer;
+}
+.still-slider-dot.active {
+  background: #404eed;
+}
+/* Single generic images sitting in the old GIF slot (sections the seeded
+   demo cannot illustrate yet -- see ro#258): portrait cover-crop so wide
+   photography fits the screenshot-shaped slot. */
+.top-image.crop-portrait {
+  aspect-ratio: 330 / 492;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 64px rgba(18, 23, 34, .18);
+}

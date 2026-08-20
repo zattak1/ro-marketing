@@ -79,3 +79,67 @@
     });
 })();
   
+// ro#258: stills sliders -- scroll-snap carousels replacing the feature GIFs.
+// Dots + gentle auto-advance; auto-advance only while on screen, stops for
+// good on any user interaction, and never runs under prefers-reduced-motion.
+(() => {
+    const init = () => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        document.querySelectorAll('.still-slider').forEach((slider) => {
+            const track = slider.querySelector('.still-slider-track');
+            const slides = track ? Array.from(track.children) : [];
+            if (slides.length < 2) return;
+
+            let timer = null;
+            const stop = () => { clearInterval(timer); timer = null; };
+            const pause = () => { stop(); slider.dataset.paused = '1'; };
+
+            const dots = document.createElement('div');
+            dots.className = 'still-slider-dots';
+            slides.forEach((_, i) => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'still-slider-dot' + (i === 0 ? ' active' : '');
+                b.setAttribute('aria-label', 'Go to slide ' + (i + 1) + ' of ' + slides.length);
+                b.addEventListener('click', () => {
+                    pause();
+                    track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+                });
+                dots.appendChild(b);
+            });
+            slider.appendChild(dots);
+
+            const current = () => Math.round(track.scrollLeft / track.clientWidth);
+            track.addEventListener('scroll', () => {
+                const i = current();
+                dots.querySelectorAll('.still-slider-dot').forEach((d, j) => {
+                    d.classList.toggle('active', j === i);
+                });
+            }, { passive: true });
+
+            ['pointerdown', 'wheel', 'touchstart', 'keydown'].forEach((ev) => {
+                track.addEventListener(ev, pause, { passive: true });
+            });
+
+            new IntersectionObserver((entries) => {
+                entries.forEach((e) => {
+                    if (!e.isIntersecting || reduceMotion.matches || slider.dataset.paused) {
+                        stop();
+                    } else if (!timer) {
+                        timer = setInterval(() => {
+                            track.scrollTo({
+                                left: ((current() + 1) % slides.length) * track.clientWidth,
+                                behavior: 'smooth'
+                            });
+                        }, 3500);
+                    }
+                });
+            }, { threshold: 0.4 }).observe(slider);
+        });
+    };
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
